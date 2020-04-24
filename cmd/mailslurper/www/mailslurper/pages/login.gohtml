@@ -9,7 +9,7 @@
 </div>
 {{end}}
 
-<form class="well login-box" name="frmLogin" id="frmLogin" method="POST" action="/perform-login">
+<form class="well login-box" name="frmLogin" id="frmLogin" method="POST" action="{{.PublicWWWURL}}/perform-login">
 	<div class="form-group">
 		<label for="userName">User Name</label>
 		<input type="text" name="userName" id="userName" class="form-control" autofocus />

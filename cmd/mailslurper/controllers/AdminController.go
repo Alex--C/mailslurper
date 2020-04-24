@@ -215,7 +215,7 @@ func (c *AdminController) PerformLogin(ctx echo.Context) error {
 	s.Values["user"] = credentials.UserName
 
 	s.Save(ctx.Request(), ctx.Response())
-	return ctx.Redirect(http.StatusFound, "/")
+	return ctx.Redirect(http.StatusFound, c.Config.GetPublicWWWURL())
 }
 
 /*

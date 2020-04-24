@@ -4,6 +4,10 @@
 
 "use strict";
 
+function getAppURL() {
+	return $('meta[name=app-url]').attr('content');
+}
+
 window.SettingsService = {
 	/**
 	 * addSavedSearch will append a new saved search
@@ -51,7 +55,7 @@ window.SettingsService = {
 		return new Promise(function (resolve, reject) {
 			$.ajax({
 				method: "GET",
-				url: "/servicesettings"
+				url: getAppURL() + "/servicesettings"
 			}).then(
 				function (result) {
 					return resolve(result);
@@ -79,7 +83,7 @@ window.SettingsService = {
 	 * getWWURL return the fully formatted app URL
 	 */
 	getAppURL: function () {
-		return $('meta[name=app-url]').attr('content')
+		return getAppURL();
 	},
 
 	/**

@@ -41,7 +41,7 @@ func adminAuthorization(next echo.HandlerFunc) echo.HandlerFunc {
 		}
 
 		if temp, ok = s.Values["user"]; !ok {
-			return ctx.Redirect(http.StatusTemporaryRedirect, "/login")
+			return ctx.Redirect(http.StatusTemporaryRedirect, config.GetPublicWWWURL() + "/login")
 		}
 
 		adminUserContext.User = temp.(string)
